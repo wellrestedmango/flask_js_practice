@@ -4,9 +4,9 @@ const ContactList = ({contacts, updateContact, updateCallback}) => {
     const onDelete = async (id) => {
         try {
             const options = {
-                method: 'DELETE'
+                method: "DELETE"
             }
-            const response = await fetch(`https://127.0.0.1:5000/delete_contact/${id}`, options)
+            const response = await fetch(`http://127.0.0.1:5000/delete_contact/${id}`, options)
             if (response.status === 200) {
                 updateCallback()
             } else{

@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
-import ContactList from './ContactList'
-import './App.css'
-import ContactForm from './ContactForm'
+import { useState, useEffect } from 'react';
+import ContactList from './ContactList';
+import './App.css';
+import ContactForm from './ContactForm';
 
 function App() {
   const [contacts, setContacts] = useState([])
@@ -43,9 +43,8 @@ function App() {
     <>
     <ContactList contacts={contacts} updateContact={openEditModal} updateCallback={onUpdate} />
     <button onClick={openCreateModal}>Create New Contact</button>
-    {
-      isModalOpen && <div className='modal'>
-        <div>
+    {isModalOpen && <div className='modal'>
+        <div className='modal-content'>
           <span className='close' onClick={closeModal}>&times;</span>
           <ContactForm existingContact={currentContact} updateCallback={onUpdate} />
         </div>
@@ -53,8 +52,6 @@ function App() {
     } 
     </>
   );
-
-
 }
 
 export default App;
